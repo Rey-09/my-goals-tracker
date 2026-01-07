@@ -87,22 +87,6 @@ Right click index.html → Open with Live Server
 
 Made with ❤️ by **Rieka zalsa nabila**
 
-## Output:
-
-## Login Page
-
-## Dashboard Page
-<img width="851" height="975" alt="image" src="https://github.com/user-attachments/assets/b3ed2c1d-83ba-4b9c-8e03-e3dc28b03d6b" />
-
-## Weekly Goals
-<img width="662" height="928" alt="image" src="https://github.com/user-attachments/assets/9b271936-501f-4641-980b-6865b5698790" />
-
-## Profile Page
-<img width="670" height="964" alt="image" src="https://github.com/user-attachments/assets/444d1cf8-5bf5-44ba-8c82-4d68d477d163" />
-
-## Form GroupTask
-  <img width="650" height="943" alt="image" src="https://github.com/user-attachments/assets/e57ea6b1-f7ab-4ed4-ba0a-a8744b3ffd4f" />
-
 
 
 
