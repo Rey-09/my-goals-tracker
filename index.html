@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4dabf7">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+   <div class="container">
+        <div class="circle-container" id="circleContainer"></div>
+
+        <div class="login-box">
+            <h3>Login</h3>
+
+            <form id="loginForm">
+                <div class="input-group">
+                   <input type="email" id="loginEmail" placeholder="Email" required>
+                    <span class="input-icon"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="input-icon toggle-password" id="togglePassword"><i class="fa-solid fa-lock"
+                            style="color: #ffffff;"></i></span>
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot your password ?</a>
+                </div>
+
+                <button type="submit" class="login-btn">LOGIN</button>
+            </form>
+
+            <div class="social-login">
+                <p>log in with</p>
+                <div class="social-icons">
+                    <div class="social-icon facebook">f</div>
+                    <div class="social-icon twitter">𝕏</div>
+                    <div class="social-icon google">G</div>
+                </div>
+            </div>
+
+            <div class="signup-link">
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+<div class="app">
+  <!-- ONBOARDING -->
+  <div class="onboarding" id="onboarding">
+    <div class="illustration">🧘‍♂️</div>
+    <h1>Task Management</h1>
+    <p>This productivity tool is designed to help you better manage your task project-wise conveniently!</p>
+    <button class="btn" onclick="goHome()">Let's start</button>
+  </div>
+
+  
+  <!-- HOME -->
+  <div class="home" id="home">
+    <div class="header">
+    <h2>Hello! <br> <span id="username">User</span></h2>
+
+      🔔
+    </div>
+    <div class="progress-card">
+      <p>Your today's task almost done!</p>
+      <div class="progress">
+        <span id="homePercent">0%</span>
+        ✔️
+      </div>
+    </div>
+    <div class="section-title">Task Groups</div>
+    <div class="task-group" onclick="openGroup('College')">
+      <div>College Project</div>
+      <div class="circle" style="border-color:#ff6b9c">
+        <span id="percent-College">0%</span>
+      </div>
+    </div>
+    <div class="task-group" onclick="openGroup('Personal')">
+      <div>Personal Project</div>
+      <div class="circle" style="border-color:#ff9f43">
+        <span id="percent-Personal">0%</span>
+      </div>
+    </div>
+    <div class="task-group" onclick="openGroup('Study')">
+      <div>Daily Study</div>
+      <div class="circle" style="border-color:#4dabf7">
+        <span id="percent-Study">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP PAGE -->
+  <div class="group-page" id="groupPage">
+    <h3 id="groupTitle">Group</h3>
+    <form id="groupForm">
+      <input type="text" id="groupInput" placeholder="New goal..." required>
+      <button>Add</button>
+    </form>
+    <ul id="groupList"></ul>
+    <button class="back-btn" onclick="showHome()">⬅ Back</button>
+
+  </div>
+
+  <!-- TASKS (Weekly Goals) -->
+  <div class="tasks" id="tasks">
+    <h3 style="margin-bottom:16px">Weekly Goals</h3>
+    <form id="goalForm">
+      <input type="text" id="goalInput" placeholder="New goal / note..." required>
+      <button type="submit">Add</button>
+    </form>
+    <div class="stats">
+      <p>✅ Done: <span id="doneCount">0</span></p>
+      <p>❌ Failed: <span id="failCount">0</span></p>
+      <p>📊 Success: <span id="successPercent">0%</span></p>
+    </div>
+    <ul id="goalList"></ul>
+  </div>
+
+
+  
+<!-- HISTORY -->
+<div class="history" id="history">
+  <h3>Activity History</h3>
+
+  <div class="history-filter">
+    <button onclick="filterHistory('all')">All</button>
+    <button onclick="filterHistory('group')">Task Group</button>
+    <button onclick="filterHistory('weekly')">Weekly</button>
+  </div>
+
+  <ul id="historyList" class="history-list">
+    <!-- history items render via JS -->
+  </ul>
+
+  <button class="clear-history-btn" onclick="clearHistory()">
+    🗑 Clear History
+  </button>
+</div>
+
+
+  <!-- PROFILE -->
+<div class="profile" id="profile">
+  <h3>My Profile</h3>
+
+  <div class="profile-card">
+
+    <!-- AVATAR -->
+    <div class="avatar" id="profileAvatar">D</div>
+
+    <!-- NAME -->
+    <label>Name</label>
+   <input id="profileName" type="text" />
+
+    <!-- EMAIL -->
+    <label>Email</label>
+
+    <input id="profileEmail" type="email" disabled />
+    <div id="profileAvatar"></div>
+
+    <button class="save-btn" onclick="saveProfile()">Save Profile</button>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+
+    <hr style="margin:16px 0">
+
+    <p><strong>Week Progress:</strong></p>
+    <h1 id="profilePercent">0%</h1>
+    <p>Keep improving your standards 💪</p>
+  </div>
+</div>
+
+  <!-- NAV -->
+  <div class="nav">
+    <button onclick="showHome()">🏠</button>
+    <button onclick="showTasks()">📋</button>
+    <button onclick="showHistory()">🕒</button>
+    <button onclick="showProfile()">👤</button>
+  </div>
+</div>
+<script src="script.js"></script>
+
+
+</body>
+</html>
